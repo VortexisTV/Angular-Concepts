@@ -1,0 +1,27 @@
+<div>
+  <!-- Text Interpolation -->
+  <p>Hello {{ name }}</p>
+
+  <!-- Property Binding -->
+  <img [src]="itemImageUrl">
+
+  <!-- Attribute Binding -->
+  <button [attr.aria-label]="ariaLabel">Accessibility Button</button>
+
+  <div *ngIf="showElement">Show me</div>
+
+  <ng-template [ngIf]="!showElement">
+    <div>Hide me</div>
+  </ng-template>
+
+  <div *ngFor="let item of items">{{ item }}</div>
+
+  <div [ngSwitch]="status">
+    <div *ngSwitchCase="'received'">Order Received</div>
+    <div *ngSwitchCase="'processing'">Order Processing</div>
+    <div *ngSwitchCase="'shipped'">Order Shipped</div>
+    <div *ngSwitchDefault>Order Pending</div>
+  </div>
+
+  <div [ngStyle]="{'background-color': color}">Styled Element</div>
+</div>
